@@ -11,6 +11,7 @@ let
   inherit (python3Packages) python buildPythonPackage;
 in buildPythonPackage rec {
   pname = "open-fprintd";
+  version = "master";
 
   src = fetchFromGitHub {
     owner = "uunicorn";

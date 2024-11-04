@@ -10,6 +10,7 @@ let
   inherit (python3Packages) python buildPythonPackage;
 in buildPythonPackage rec {
   pname = "python-validity";
+  version = "master";
 
   src = fetchFromGitHub {
     owner = "uunicorn";
