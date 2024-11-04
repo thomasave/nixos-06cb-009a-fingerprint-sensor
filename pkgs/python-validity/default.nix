@@ -16,7 +16,7 @@ in buildPythonPackage rec {
     owner = "uunicorn";
     repo = pname;
     rev = "af1fc60be7ce4e8c607f488344394b2453604b55";
-    sha256 = lib.fakeSha256; # set to lib.fakeSha256 first to get the hash
+    sha256 = "sha256-tgGgI7C0CD76SXKyN42MbHc6tQ18bLabrUOxZh9qv3M="; # set to lib.fakeSha256 first to get the hash
   };
 
   patches = [
