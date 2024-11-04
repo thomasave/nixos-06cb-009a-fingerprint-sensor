@@ -11,13 +11,11 @@ let
   inherit (python3Packages) python buildPythonPackage;
 in buildPythonPackage rec {
   pname = "open-fprintd";
-  version = "0.6";
 
   src = fetchFromGitHub {
     owner = "uunicorn";
     repo = pname;
-    rev = "${version}";
-    sha256 = "sha256-uVFuwtsmR/9epoqot3lJ/5v5OuJjuRjL7FJF7oXNDzU="; # set to lib.fakeSha256 first to get the hash
+    sha256 = lib.fakeSha256; # set to lib.fakeSha256 first to get the hash
   };
 
   patches = [

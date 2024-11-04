@@ -10,13 +10,11 @@ let
   inherit (python3Packages) python buildPythonPackage;
 in buildPythonPackage rec {
   pname = "python-validity";
-  version = "0.14";
 
   src = fetchFromGitHub {
     owner = "uunicorn";
     repo = pname;
-    rev = "${version}";
-    sha256 = "sha256-6NbxeokbGW5yP3g9Q/W3k0JiU6g+qyeZfKfw0nBJ37o="; # set to lib.fakeSha256 first to get the hash
+    sha256 = lib.fakeSha256; # set to lib.fakeSha256 first to get the hash
   };
 
   patches = [
@@ -37,7 +35,7 @@ in buildPythonPackage rec {
 
     # The firmware download script is run as part of the installation process on other distributions.
     # However, it tries to identify the system hardware and download different firmware packages depending on the results.
-    # 
+    #
     # This sort of side-effect related behaviour is probably not ideal to have in the build process of a Nix package.
     # Instead, the user shall call `validity-sensors-firmware` themselves when using python validity for the first time.
     # TODO: We should make it so, that the python-validity service downloads the firmware automatically when not present.
