@@ -16,6 +16,7 @@ in buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "uunicorn";
     repo = pname;
+    rev = "6250c540aa325620f1838d27d7a920347d17f8d0";
     sha256 = lib.fakeSha256; # set to lib.fakeSha256 first to get the hash
   };
 
